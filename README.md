@@ -25,9 +25,11 @@ O projeto foi finalizado
 Para jogar:
 
 ```
-Basta inserir seu nome, e prestar atenção nas cores que piscam, memorize a ordem das cores, e quando elas pararem de piscar você deve clicar na mesma sequência,
+Basta inserir seu nome, e prestar atenção nas cores que piscam,
+memorize a ordem das cores, e quando elas pararem de piscar você deve clicar na mesma sequência,
 caso acerte, você ganha dez pontos e uma nova rodada começa, adicionando mais uma cor a sequência.
-O Jogo acaba quando erra a ordem, e se tiver feito mais pontos que alguém na lista, seu nome será inserido.
+O Jogo acaba quando erra a ordem, e se tiver feito mais pontos que alguém na lista,
+seu nome será inserido.
 ```
 
 
