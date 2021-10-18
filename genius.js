@@ -5,6 +5,7 @@ const yellow = document.querySelector('.yellow')
 const green = document.querySelector('.green')
 const scorePanel = document.querySelector('.score-panel')
 const highScores = document.getElementById('score-list')
+const player = document.getElementById('player')
 let playerName = ''
 
 
@@ -54,7 +55,7 @@ const checkOrder = () => {
         }
     }
     if (clickedOrder.length == order.length) {
-        alert(`Pontuação: ${score}\n Voce Acertou ${playerName}! Iniciando próximo nível`)
+        alert(`Voce Acertou ${playerName}! Iniciando próximo nível`)
         nextLevel()
         score +=10
         scorePanel.innerHTML=`${score}`
@@ -108,9 +109,11 @@ const gameOver = () => {
     clickedOrder = []
 
     playGame()
+    scoreboardList()
 }
 const playGame = () => {
  playerName = prompt("what is your name?")
+ player.innerHTML = playerName
     console.log('inicio do jogo')
  
     score = 0
@@ -122,8 +125,9 @@ red.onclick = () => click(1);
 yellow.onclick = () => click(2);
 blue.onclick = () => click(3);
 
-playGame()
+
 const scoreboardList = () => {
+    highScores.innerHTML=''
     scoreboard.map(element=>{
         let newLi = document.createElement('li')
         let newLiNode = document.createTextNode(`${element.name}: ${element.points}`)
@@ -133,6 +137,7 @@ const scoreboardList = () => {
 }
 
 scoreboardList()
-//salvar score no local storage
+playGame()
+
 
 
