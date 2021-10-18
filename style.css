@@ -1,15 +1,24 @@
 body{
+    
     background-color: cyan;
 
 margin: 0;
 }
+header{
+    line-height: 2px;
+    position: fixed;
+    margin:20px 0px 0px 20px;
+
+}
 
 .main-game {
+    font-size: 30px;
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 .genius{
     display: grid;
@@ -19,8 +28,8 @@ margin: 0;
     border: 1px solid white;
     background-color: white;
     border-radius: 100%;
-    width: 700px;
-    height: 700px;
+    width: 500px;
+    height: 500px;
 }
 .blue {
     grid-area: azul;
@@ -45,3 +54,34 @@ margin: 0;
 .selected {
     opacity: 0.1;
 }
+.rotate-center {
+	-webkit-animation: rotate-center 0.9s ease-in-out both;
+	        animation: rotate-center 0.9s ease-in-out both;
+}
+
+ @-webkit-keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  .score-list {
+      position: absolute;
+      right: 20px ;
+      top: 0;
+  }
+  

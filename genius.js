@@ -1,7 +1,13 @@
+const scoreboard = JSON.parse(localStorage.getItem('scoreboard')) || []
 const blue = document.querySelector('.blue')
 const red = document.querySelector('.red')
 const yellow = document.querySelector('.yellow')
 const green = document.querySelector('.green')
+const scorePanel = document.querySelector('.score-panel')
+const highScores = document.getElementById('score-list')
+let playerName = ''
+
+
 let order = []
 let clickedOrder = []
 let score = 0
@@ -27,7 +33,7 @@ const shuffleOrder = () => {
 }
 
 const lightColor = (element, number) => {
-    console.log('color')
+    
     number = number * 500
     setTimeout(() => {
         element.classList.add('selected')
@@ -37,6 +43,7 @@ const lightColor = (element, number) => {
         element.classList.remove('selected')
         console.log('timeout remove color')
     },number)
+    
 }
 const checkOrder = () => {
     for (let i in clickedOrder) {
@@ -47,8 +54,10 @@ const checkOrder = () => {
         }
     }
     if (clickedOrder.length == order.length) {
-        alert(`Pontuação: ${score}\n Voce Acertou! Iniciando próximo nível`)
+        alert(`Pontuação: ${score}\n Voce Acertou ${playerName}! Iniciando próximo nível`)
         nextLevel()
+        score +=10
+        scorePanel.innerHTML=`${score}`
     }
 
 }
@@ -77,10 +86,22 @@ const createColorElement = (color) => {
 }
 const nextLevel = () => {
     console.log('next level')
-    score++
+    
     shuffleOrder()
 }
 const gameOver = () => {
+   if(scoreboard.length>=5 && score>scoreboard[4].points){
+        
+        scoreboard[4]={name:playerName,points:score}
+    
+       localStorage.setItem('scoreboard', JSON.stringify(scoreboard.sort((a,b)=>b.points-a.points)))
+
+   }else if(scoreboard.length<5) {
+
+    scoreboard.push({name:playerName,points:score})
+       localStorage.setItem('scoreboard', JSON.stringify(scoreboard.sort((a,b)=>b.points-a.points)))
+   }
+   
     console.log('gameover')
     alert(`Pontuação: ${score}\n Voce Perdeu!\n click em Ok para jogar novamente`)
     order = []
@@ -89,9 +110,11 @@ const gameOver = () => {
     playGame()
 }
 const playGame = () => {
+ playerName = prompt("what is your name?")
     console.log('inicio do jogo')
-    alert('Bem vindo ao Genius!\n iniciando o jogo!')
+ 
     score = 0
+    scorePanel.innerHTML= ''
     nextLevel()
 }
 green.onclick = () => click(0);
@@ -100,3 +123,16 @@ yellow.onclick = () => click(2);
 blue.onclick = () => click(3);
 
 playGame()
+const scoreboardList = () => {
+    scoreboard.map(element=>{
+        let newLi = document.createElement('li')
+        let newLiNode = document.createTextNode(`${element.name}: ${element.points}`)
+        newLi.appendChild(newLiNode)
+        highScores.appendChild(newLi)
+    })
+}
+
+scoreboardList()
+//salvar score no local storage
+
+
