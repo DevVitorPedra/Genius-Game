@@ -80,9 +80,15 @@ header{
     }
   }
   .score-list {
+      font-size: 20px;
       position: absolute;
-      right: 20px ;
-      top: 0;
+      right: 50px ;
+      top: 40px;
+  }
+  .highscores{
+      position:absolute;
+      right: 85px;
+      top: 20px;
   }
   @media screen and (max-width:400px) {
     body{
