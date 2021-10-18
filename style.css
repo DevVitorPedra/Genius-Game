@@ -84,4 +84,199 @@ header{
       right: 20px ;
       top: 0;
   }
-  
+  @media screen and (max-width:400px) {
+    body{
+    
+        background-color: cyan;
+    
+    margin: 0;
+    }
+    header{
+        font-size: 12px;
+        line-height: 2px;
+        position: fixed;
+        margin:10px 0px 0px 10px;
+    
+    }
+    
+    .main-game {
+        
+        font-size: 20px;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .genius{
+        margin-top: 40px;
+        display: grid;
+        grid-template-areas: 'verde vermelho'
+        'amarelo  azul';
+        grid-gap: 10px;
+        border: 1px solid white;
+        background-color: white;
+        border-radius: 100%;
+        width: 400px;
+        height: 400px;
+    }
+    .blue {
+        grid-area: azul;
+        background-color: blue;
+        border-bottom-right-radius: 100%; 
+    }
+    .yellow {
+        grid-area: amarelo;
+        background-color: yellow;
+        border-bottom-left-radius: 100%; 
+    }
+    .red {
+        grid-area: vermelho;
+        background-color: red;
+        border-top-right-radius: 100%;
+    }
+    .green {
+        grid-area: verde;
+        background-color: green;
+        border-top-left-radius: 100%;
+    }
+    .selected {
+        opacity: 0.1;
+    }
+    .rotate-center {
+        -webkit-animation: rotate-center 0.9s ease-in-out both;
+                animation: rotate-center 0.9s ease-in-out both;
+    }
+    
+     @-webkit-keyframes rotate-center {
+        0% {
+          -webkit-transform: rotate(0);
+                  transform: rotate(0);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+                  transform: rotate(360deg);
+        }
+      }
+      @keyframes rotate-center {
+        0% {
+          -webkit-transform: rotate(0);
+                  transform: rotate(0);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+                  transform: rotate(360deg);
+        }
+      }
+      .score-list {
+          font-size: 12px;
+          position: absolute;
+          right: 20px ;
+          top: 25px;
+      }
+      .highscores{
+          position:absolute;
+          right: 25px;
+          top: 10px;
+      }
+  }
+  @media screen and (max-width: 700px) {
+
+    body{
+    
+        background-color: cyan;
+    
+    margin: 0;
+    }
+    header{
+        font-size: 12px;
+        line-height: 2px;
+        position: fixed;
+        margin:10px 0px 0px 10px;
+    
+    }
+    
+    .main-game {
+        
+        font-size: 20px;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .genius{
+        margin-top: 40px;
+        display: grid;
+        grid-template-areas: 'verde vermelho'
+        'amarelo  azul';
+        grid-gap: 10px;
+        border: 1px solid white;
+        background-color: white;
+        border-radius: 100%;
+        width: 300px;
+        height: 300px;
+    }
+    .blue {
+        grid-area: azul;
+        background-color: blue;
+        border-bottom-right-radius: 100%; 
+    }
+    .yellow {
+        grid-area: amarelo;
+        background-color: yellow;
+        border-bottom-left-radius: 100%; 
+    }
+    .red {
+        grid-area: vermelho;
+        background-color: red;
+        border-top-right-radius: 100%;
+    }
+    .green {
+        grid-area: verde;
+        background-color: green;
+        border-top-left-radius: 100%;
+    }
+    .selected {
+        opacity: 0.1;
+    }
+    .rotate-center {
+        -webkit-animation: rotate-center 0.9s ease-in-out both;
+                animation: rotate-center 0.9s ease-in-out both;
+    }
+    
+     @-webkit-keyframes rotate-center {
+        0% {
+          -webkit-transform: rotate(0);
+                  transform: rotate(0);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+                  transform: rotate(360deg);
+        }
+      }
+      @keyframes rotate-center {
+        0% {
+          -webkit-transform: rotate(0);
+                  transform: rotate(0);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+                  transform: rotate(360deg);
+        }
+      }
+      .score-list {
+          font-size: 12px;
+          position: absolute;
+          right: 20px ;
+          top: 25px;
+      }
+      .highscores{
+          position:absolute;
+          right: 25px;
+          top: 10px;
+      }
+      
+  }
